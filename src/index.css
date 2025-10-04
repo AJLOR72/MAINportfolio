@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Unique dark palette with deep contrast */
+    --background: 240 18% 8%;
+    --foreground: 48 100% 96%;
+
+    --space-deep: 240 18% 8%;
+    --space-dark: 238 20% 11%;
+    --space-medium: 236 22% 15%;
+    
+    --card: 238 20% 11%;
+    --card-foreground: 48 100% 96%;
+
+    --popover: 238 20% 11%;
+    --popover-foreground: 48 100% 96%;
+
+    /* Distinctive amber/gold primary instead of purple */
+    --primary: 38 92% 58%;
+    --primary-foreground: 240 18% 8%;
+    --primary-glow: 40 100% 65%;
+
+    /* Muted teal secondary */
+    --secondary: 174 42% 52%;
+    --secondary-foreground: 240 18% 8%;
+    --secondary-glow: 174 55% 60%;
+
+    /* Burnt orange accent */
+    --accent: 18 85% 58%;
+    --accent-foreground: 240 18% 8%;
+    --accent-glow: 18 95% 65%;
+
+    --muted: 235 15% 25%;
+    --muted-foreground: 230 18% 68%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 48 100% 96%;
+
+    --border: 235 20% 20%;
+    --input: 235 20% 20%;
+    --ring: 38 92% 58%;
+
+    --radius: 0.75rem;
+
+    /* Unique gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-depth: linear-gradient(180deg, hsl(var(--space-deep)) 0%, hsl(235 25% 12%) 100%);
+    --gradient-subtle: linear-gradient(120deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--secondary) / 0.08) 100%);
+    
+    /* Refined glow effects */
+    --glow-warm: 0 4px 24px hsl(var(--primary) / 0.35);
+    --glow-cool: 0 4px 24px hsl(var(--secondary) / 0.3);
+    --glow-accent: 0 4px 24px hsl(var(--accent) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+  }
+  
+  .warm-glow {
+    text-shadow: 0 0 30px hsl(var(--primary) / 0.6);
+  }
+  
+  .glass-panel {
+    background: linear-gradient(135deg, hsl(var(--card) / 0.5) 0%, hsl(var(--card) / 0.3) 100%);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid hsl(var(--border) / 0.4);
+    box-shadow: inset 0 1px 0 hsl(var(--foreground) / 0.05);
+  }
+  
+  .grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .diagonal-lines {
+    background-image: repeating-linear-gradient(
+      45deg,
+      hsl(var(--primary) / 0.02) 0px,
+      hsl(var(--primary) / 0.02) 2px,
+      transparent 2px,
+      transparent 12px
+    );
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
