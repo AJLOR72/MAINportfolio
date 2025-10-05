@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/UI/button';
+import { Badge } from '@/components/UI/badge';
 
 interface ProjectCardProps {
   title: string;
